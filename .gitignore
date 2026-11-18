@@ -34,3 +34,6 @@ build/
 
 ### Bando de dados ###
 *.db
+
+### Segredos locais ###
+segredos.properties
