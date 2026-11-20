@@ -27,6 +27,37 @@ public class LotePlantioControlador {
         return ResponseEntity.ok(lotes);
 
     }
-}
 
+    @GetMapping("/{id}")
+    public ResponseEntity<LotePlantio> buscarLotePorId(@PathVariable Long id) {
+        return lotePlantioServico.buscarLotePorId(id)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<LotePlantio> atualizarLotePlantio(
+            @PathVariable Long id,
+            @RequestBody LotePlantio lote
+    ) {
+        return lotePlantioServico.atualizarLotePlantio(id, lote)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> removerLotePlantio(@PathVariable Long id) {
+        if (!lotePlantioServico.removerLotePlantio(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/sincronizar-offline")
+    public ResponseEntity<List<LotePlantio>> sincronizarDadosOffline(
+            @RequestBody List<LotePlantio> lotes
+    ) {
+        return ResponseEntity.ok(lotePlantioServico.sincronizarDadosOffline(lotes));
+    }
+}
 

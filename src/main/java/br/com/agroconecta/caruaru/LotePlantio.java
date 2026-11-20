@@ -11,6 +11,7 @@ public class LotePlantio {
     private Long id;
 
     private String nomeLote;
+    private String nomeProdutor;
     private String cultura;
     private Double areaHectares;
     private LocalDate dataPlantio;
@@ -33,6 +34,14 @@ public class LotePlantio {
 
     public void setNomeLote(String nomeLote) {
         this.nomeLote = nomeLote;
+    }
+
+    public String getNomeProdutor() {
+        return nomeProdutor;
+    }
+
+    public void setNomeProdutor(String nomeProdutor) {
+        this.nomeProdutor = nomeProdutor;
     }
 
     public String getCultura() {
@@ -65,6 +74,14 @@ public class LotePlantio {
 
     public void setPrevisaoColheita(LocalDate previsaoColheita) {
         this.previsaoColheita = previsaoColheita;
+    }
+
+    public LocalDate getDataPrevisaoColheita() {
+        return previsaoColheita;
+    }
+
+    public void setDataPrevisaoColheita(LocalDate dataPrevisaoColheita) {
+        this.previsaoColheita = dataPrevisaoColheita;
     }
 
 }
