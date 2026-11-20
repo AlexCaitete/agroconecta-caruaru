@@ -6,7 +6,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "lote_plantio")
 public class LotePlantio {
-    @id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -14,7 +14,7 @@ public class LotePlantio {
     private String cultura;
     private Double areaHectares;
     private LocalDate dataPlantio;
-    private previsaoColheita;
+    private LocalDate previsaoColheita;
 
     public LotePlantio() {
     }
@@ -51,7 +51,7 @@ public class LotePlantio {
         this.areaHectares = areaHectares;
     }
 
-    public localDate getDataPlantio() {
+    public LocalDate getDataPlantio() {
         return dataPlantio;
     }
 
@@ -59,12 +59,12 @@ public class LotePlantio {
         this.dataPlantio = dataPlantio;
     }
 
-     public LocalDate getPrevisaoColheita() {
+    public LocalDate getPrevisaoColheita() {
         return previsaoColheita;
-     }
+    }
 
-     public void setPrevisaoColheita(LocalDate previsaoColheita) {
+    public void setPrevisaoColheita(LocalDate previsaoColheita) {
         this.previsaoColheita = previsaoColheita;
-     }
+    }
 
 }
