@@ -1,0 +1,10 @@
+{
+  "description": "Conecta agricultores familiares, compradores e técnicos de Caruaru para organizar safras, encontrar oportunidades, compartilhar transporte e acompanhar dados agrícolas.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
